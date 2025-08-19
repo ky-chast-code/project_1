@@ -52,5 +52,16 @@ def game_ask_user():
     game_output = game_rock_paper_scisors(int(user_input_str))
     print(game_result(game_output))
 
-game_ask_user()
 
+def search_char_in_word(word: str, char: str, start: int = 0):
+    position = word.find(char, start)
+    if position != -1:
+        print(f"Yor character is in {position+1} pozition")
+        search_char_in_word(word, char, position+1)
+    else:
+        print(f"there is no such character in this word")
+
+
+if __name__ == "__main__":
+    word = "Developer"
+    search_char_in_word(word, "e")
